@@ -1,14 +1,14 @@
-# Nerfies
+# Imitator
 
-This is the repository that contains source code for the [Nerfies website](https://nerfies.github.io).
+This is the repository that contains source code for the [Imitator website](https://balamuruganthambiraja.github.io/Imitator) borrowed from [Nerfies website](https://nerfies.github.io).
 
-If you find Nerfies useful for your work please cite:
+If you find Imitator useful for your work please cite:
 ```
-@article{park2021nerfies
-  author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},
-  title     = {Nerfies: Deformable Neural Radiance Fields},
-  journal   = {ICCV},
-  year      = {2021},
+@inproceedings{Thambiraja2022Imitator,
+  author    = {Thambiraja Balamurugan and Habibie, Ikhsanul and Aliakbarian, Sadegh and Cosker, Darren and Theobalt, Christian and Thies, Justus},
+  title     = {Imitator: Personalized Speech-driven 3D Facial Animation},
+  publisher = {arXiv},
+  year      = {2022},
 }
 ```
 
