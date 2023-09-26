@@ -75,6 +75,7 @@
       <div class="columns is-centered">
         <div class="column has-text-centered">
           <h1 class="title is-1 publication-title">Imitator: Personalized Speech-driven 3D Facial Animation</h1>
+          <span class="author-block"><h6 class="title is-3">ICCV 2023</h1></span>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
               <a href="">Balamurugan Thambiraja</a><sup>1</sup>,</span>
@@ -94,19 +95,17 @@
               <a href="https://justusthies.github.io/">Justus Thies</a><sup>1</sup>,
             </span>
           </div>
-
           <div class="is-size-5 publication-authors">
             <span class="author-block"><sup>1</sup> Max Planck Institute for Intelligent Systems, Tübingen, Germany,</span>
             <span class="author-block"><sup>2</sup> Max Planck Institute for Informatics, Saarland, Germany,</span>
             <p> </p>
             <span class="author-block"><sup>3</sup> Mesh Labs, Microsoft, Cambridge, UK.</span>
           </div>
-
           <div class="column has-text-centered">
             <div class="publication-links">
               <!-- PDF Link. -->
               <span class="link-block">
-                <a href="media/pdf/Imitator__Personalized_speech_driven_3D_facial_animation_arxiv_version.pdf"
+                <a href="media/pdf/Imitator__Personalized_speech_driven_3D_facial_animation_ICCV2023.pdf"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fas fa-file-pdf"></i>
@@ -125,7 +124,7 @@
               </span>
               <!-- Video Link. -->
               <span class="link-block">
-                <a href="https://www.youtube.com/watch?v=JhXTdjiUCUw"
+                <a href="https://www.youtube.com/watch?v=Ij_z4JvatnA&ab_channel=JustusThies"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fab fa-youtube"></i>
@@ -163,7 +162,6 @@
 
 <section class="section">
   <div class="container is-max-desktop">
-
     <!-- Overview. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
@@ -187,17 +185,24 @@
         <div class="content has-text-justified">
           <p>
             Speech-driven 3D facial animation has been widely explored, with applications in gaming, character animation, virtual reality, and telepresence systems.
-            State-of-the-art methods deform the face topology of the target actor to sync the input audio without considering the identity-specific speaking style and facial idiosyncrasies of the target actor, thus, resulting in unrealistic and inaccurate lip movements. 
+            State-of-the-art methods <i>deform the face topology of the target actor to sync the input audio without considering the identity-specific speaking style and facial idiosyncrasies</i> of the target actor, thus, resulting in unrealistic and inaccurate lip movements. 
           </p>
           <p>
             To address this, we present Imitator, a speech-driven facial expression synthesis method, which learns identity-specific details from a short input video and produces
-             novel facial expressions matching the identity-specific speaking style and facial idiosyncrasies of the target actor. 
+             novel facial expressions matching the identity-specific speaking style and facial idiosyncrasies of the target actor.  Specifically,
           </p> 
           <p>
-            Specifically, we train a style-agnostic transformer on a large facial expression dataset which we use as a prior for audio-driven facial expressions.
-            Based on this prior, we optimize for identity-specific speaking style based on a short reference video. 
+          <b>
+            <ol>
+              <li>We train a style-agnostic transformer(audio-driven facial expression prior) on a VOCAset.</li>
+              <li>We optimize for identity-specific speaking style based on this prior and a short reference video.</li>
+            </ol> 
+          </b> 
+            <!-- Specifically, we train a style-agnostic transformer on a large facial expression dataset which we use as a prior for audio-driven facial expressions. -->
+            <!-- We utilize this prior to optimize for identity-specific speaking style based on a short reference video.  -->
             To train the prior, we introduce a novel loss function based on detected bilabial consonants to ensure plausible lip closures and consequently improve the realism of the generated expressions.
-            Through detailed experiments and a user study, we show that our approach produces temporally coherent facial expressions from input audio while preserving the speaking style of the target actors.
+            <!-- Through detailed experiments and a user study, we show that our approach produces temporally coherent facial expressions from input audio while preserving the speaking style of the target actors. -->
+            Through detailed experiments and user studies, we show that our approach <b>improves Lip-Sync by 49% and produces expressive facial animations</b> from input audio while preserving the actor’s speaking style.
           </p>  
 
         </div>
@@ -210,8 +215,13 @@
       <div class="column is-four-fifths">
         <h2 class="title is-3">Video</h2>
         <div class="publication-video">
-          <iframe src="https://www.youtube.com/embed/JhXTdjiUCUw?rel=0&amp;showinfo=0"
-                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          
+          <iframe width="834" height="469" src="https://www.youtube.com/embed/Ij_z4JvatnA?rel=0&amp;showinfo=0" 
+          title="Imitator: Personalized Speech-driven 3D Facial Animation (ICCV 2023)" 
+          frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+          <!-- <iframe src="https://www.youtube.com/embed/JhXTdjiUCUw?rel=0&amp;showinfo=0"
+                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> -->
         </div>
       </div>
     </div>
@@ -228,106 +238,147 @@
             interpreted by an auto-regressive viseme decoder which generates a generalized motion feature  v&#770;<sub>1:T</sub>. A style-adaptable motion decoder
             maps these motion features to person-specific facial expressions &ycirc;<sub>1:T</sub> in terms of vertex displacements on top of a template mesh. 
           </p>
-          <!-- <p>
-            
-          </p>
-          <p>
-            
-          </p> -->
         </div>
       </div>
     </div>
     <!--/ Proposed Method. -->  
 
+
+    <!-- Result Method. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Result</h2>
+        <div class="content has-text-justified">
+          <img src="./media/img/heat_map.jpg" alt="Italian Trulli">
+          <p>
+            Comparison of the different methods on the VOCA test set with mean L2 vertex distance error.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Result-->  
+  
   </div>
 </section>
 
-  <section class="hero is-light is-max-desktop">
+<section class="hero is-light is-max-desktop">
 
-    <!-- Impact of personalization -->
-    <div class="hero-body">
-      <div class="columns is-centered ">
-        <h2 class="title is-3">Impact of Personalization</h2>
-      </div>
-      <div class="container">
-        <div id="results-carousel" class="carousel results-carousel">
-          <div class="item item-personalization-01">
-            <video poster="" id="personalization-01" autoplay controls muted loop playsinline height="100%">
-              <source src="./media/videos/personalization/personaliation_01.mp4"
-                      type="video/mp4">
-            </video>
-          </div>
-          <div class="item item-personalization-04">
-            <video poster="" id="personalization-04" autoplay controls muted loop playsinline height="100%">
-              <source src="./media/videos/personalization/personaization_04.mp4"
-                      type="video/mp4">
-            </video>
-          </div>
-          <div class="item item-personalization-05">
-            <video poster="" id="personalization-05" autoplay controls muted loop playsinline height="100%">
-              <source src="./media/videos/personalization/personaization_05.mp4"
-                      type="video/mp4">
-            </video>
-          </div>
-          <div class="item item-personalization-06">
-            <video poster="" id="personalization-06" autoplay controls muted loop playsinline height="100%">
-              <source src="./media/videos/personalization/personaization_06.mp4"
-                      type="video/mp4">
-            </video>
-          </div>
-          <div class="item item-personalization-02">
-            <video poster="" id="personalization-02" autoplay controls muted loop playsinline height="100%">
-              <source src="./media/videos/personalization/personaization_02.mp4"
-                      type="video/mp4">
-            </video>
-          </div>
-          <div class="item item-personalization-03">
-            <video poster="" id="personalization-03" autoplay controls muted loop playsinline height="100%">
-              <source src="./media/videos/personalization/personaization_03.mp4"
-                      type="video/mp4">
-            </video>
-          </div>
+  <!-- Impact of personalization -->
+  <div class="hero-body">
+    <div class="columns is-centered ">
+      <h2 class="title is-3">Impact of Personalization</h2>
+    </div>
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-personalization-01">
+          <video poster="" id="personalization-01" autoplay controls muted loop playsinline height="100%">
+            <source src="./media/videos/personalization/personaliation_01.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-personalization-04">
+          <video poster="" id="personalization-04" autoplay controls muted loop playsinline height="100%">
+            <source src="./media/videos/personalization/personaization_04.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-personalization-05">
+          <video poster="" id="personalization-05" autoplay controls muted loop playsinline height="100%">
+            <source src="./media/videos/personalization/personaization_05.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-personalization-06">
+          <video poster="" id="personalization-06" autoplay controls muted loop playsinline height="100%">
+            <source src="./media/videos/personalization/personaization_06.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-personalization-02">
+          <video poster="" id="personalization-02" autoplay controls muted loop playsinline height="100%">
+            <source src="./media/videos/personalization/personaization_02.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-personalization-03">
+          <video poster="" id="personalization-03" autoplay controls muted loop playsinline height="100%">
+            <source src="./media/videos/personalization/personaization_03.mp4"
+                    type="video/mp4">
+          </video>
         </div>
       </div>
     </div>
+  </div>
 
-    <!-- Impact of Lip Contact Loss -->
-    <div class="hero-body">
-      <div class="columns is-centered ">
-        <h2 class="title is-3">Impact of Lip Contact Loss</h2>
-      </div>
-      <div class="container">
-        <div id="results-carousel" class="carousel results-carousel">
-          <div class="item item-lip-01">
-            <video poster="" id="lip-01" autoplay controls muted loop playsinline height="100%">
-              <source src="./media/videos/lip_contact/lip_01.mp4"
-                      type="video/mp4">
-            </video>
-          </div>
-          <div class="item item-lip-02">
-            <video poster="" id="lip-02" autoplay controls muted loop playsinline height="100%">
-              <source src="./media/videos/lip_contact/lip_02.mp4"
-                      type="video/mp4">
-            </video>
-          </div>
-          <div class="item item-lip-03">
-            <video poster="" id="lip-03" autoplay controls muted loop playsinline height="100%">
-              <source src="./media/videos/lip_contact/lip_03.mp4"
-                      type="video/mp4">
-            </video>
-          </div>
-          <div class="item item-lip-04">
-            <video poster="" id="lip-04" autoplay controls muted loop playsinline height="100%">
-              <source src="./media/videos/lip_contact/lip_04.mp4"
-                      type="video/mp4">
-            </video>
-          </div>
-         
+  <!-- Impact of Lip Contact Loss -->
+  <div class="hero-body">
+    <div class="columns is-centered ">
+      <h2 class="title is-3">Impact of Lip Contact Loss</h2>
+    </div>
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+        
+        <div class="item item-lip-01">
+          <video poster="" id="lip-01" autoplay controls muted loop playsinline height="100%">
+            <source src="./media/videos/lip_contact/lip_01.mp4"
+                    type="video/mp4">
+          </video>
         </div>
+
+        <div class="item item-lip-02">
+          <video poster="" id="lip-02" autoplay controls muted loop playsinline height="100%">
+            <source src="./media/videos/lip_contact/lip_02.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-lip-03">
+          <video poster="" id="lip-03" autoplay controls muted loop playsinline height="100%">
+            <source src="./media/videos/lip_contact/lip_03.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-lip-04">
+          <video poster="" id="lip-04" autoplay controls muted loop playsinline height="100%">
+            <source src="./media/videos/lip_contact/lip_04.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        
       </div>
     </div>
+  </div>
 
-  </section>
+ <!-- Impact of Cross-Model -->
+ <div class="hero-body">
+    
+  <div class="columns is-centered ">
+    <h2 class="title is-3">Cross-Style and Audio generalization</h2>
+  </div>
+  
+  <div class="container">
+
+    <div class="item item-cross_style_eval">
+      <video poster="" id="cross_style_eval" autoplay controls muted loop playsinline height="100%">
+        <source src="./media/videos/misc/cross_style_eval.mp4"
+                type="video/mp4">
+      </video>
+    </div>
+
+
+    <div class="item item-novel_audio">
+      <video poster="" id="novel_audio" autoplay controls muted loop playsinline height="100%">
+        <source src="./media/videos/misc/novel_audio.mp4"
+                type="video/mp4">
+      </video>
+    </div>
+
+  </div>  
+
+</div>
+
+
+
+</section>
 
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
